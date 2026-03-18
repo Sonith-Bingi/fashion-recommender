@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import argparse
+
 import json
 import logging
-from typing import Sequence
+from collections.abc import Sequence
 
 from .config import Settings
 from .logging_utils import configure_logging

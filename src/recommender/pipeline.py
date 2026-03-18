@@ -29,7 +29,12 @@ class RecommenderPipeline:
             index=self.settings.index_path.exists(),
             vectors=self.settings.vectors_path.exists(),
         )
-        logger.info("Artifact status | notebook=%s index=%s vectors=%s", status.notebook, status.index, status.vectors)
+        logger.info(
+            "Artifact status | notebook=%s index=%s vectors=%s",
+            status.notebook,
+            status.index,
+            status.vectors,
+        )
         return status
 
     def summarize_notebook(self) -> dict[str, object]:
