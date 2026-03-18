@@ -1,66 +1,3 @@
-## Example Usage
-
-You can use the recommender system programmatically in Python to get recommendations for a custom user history. For example:
-
-```python
-from src.recommender.pipeline import recommend_for_history
-
-my_history = ["Swim Trunk", "Sunglasses", "Flip Flop"]
-recommendations = recommend_for_history(my_history)
-for rec in recommendations:
-  print(rec)
-```
-
-Replace `my_history` with any list of product names or IDs representing a user's interaction history. The function `recommend_for_history` should return the top recommended products for the given history.
-
-You can also run the main pipeline steps using the provided scripts or CLI commands:
-
-**Train the model:**
-```bash
-python scripts/train.py
-```
-
-**Evaluate the model:**
-```bash
-python scripts/evaluate.py
-```
-
-**Or use the CLI:**
-```bash
-reco train
-reco evaluate
-```
-
-**Universal entry point:**
-```bash
-python main.py train
-python main.py evaluate
-```
-## Example Usage
-
-You can run the main pipeline steps using the provided scripts or CLI commands:
-
-**Train the model:**
-```bash
-python scripts/train.py
-```
-
-**Evaluate the model:**
-```bash
-python scripts/evaluate.py
-```
-
-**Or use the CLI:**
-```bash
-reco train
-reco evaluate
-```
-
-**Universal entry point:**
-```bash
-python main.py train
-python main.py evaluate
-```
 # multimodal-fashion-recommender
 
 This repository implements a production-ready, multimodal recommender system for Amazon Fashion products using a modern two-tower deep learning architecture. The system leverages both text and image features for each product, enabling richer and more accurate recommendations than unimodal approaches. The project is fully modularized for reproducibility, extensibility, and GitHub best practices.
@@ -186,6 +123,26 @@ All major steps (artifact check, summary, training, evaluation) are available vi
 - Artifact checks expect these files in repo root:
   - `item_index_v11.faiss` (multimodal index)
   - `item_tower_vecs_v11.npy` (multimodal item vectors)
+
+
+
+## Example Usage
+
+You can use the recommender system programmatically in Python to get recommendations for a custom user history. For example:
+
+```python
+from src.recommender.pipeline import recommend_for_history
+
+my_history = ["Swim Trunk", "Sunglasses", "Flip Flop"]
+recommendations = recommend_for_history(my_history)
+for rec in recommendations:
+  print(rec)
+```
+
+Replace `my_history` with any list of product names or IDs representing a user's interaction history. The function `recommend_for_history` should return the top recommended products for the given history.
+
+You can also run the main pipeline steps using the provided scripts or CLI commands.
+
 
 ## Repository Name
 
